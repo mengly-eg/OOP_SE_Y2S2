@@ -1,4 +1,4 @@
-package Material.Week_1.LAB01;
+package Week_1.LAB01;
 
 public class L01EX3 {
     public static void main(String arg[]) {

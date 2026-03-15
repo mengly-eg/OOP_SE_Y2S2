@@ -1,4 +1,4 @@
-package Material.Week_1.LAB01;
+package Week_1.LAB01;
 
 class Employee {
     String name, profession, gender;

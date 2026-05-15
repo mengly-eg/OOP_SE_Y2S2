@@ -66,28 +66,27 @@ public class L02EX10 {
             valueB = input.nextInt();
             input.nextLine();
 
-            // Perform calculation
             switch (option) {
-                case 1:
+                case 1 -> {
                     result = valueA + valueB;
                     System.out.println("Answer of A + B = " + result);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     result = valueA - valueB;
                     System.out.println("Answer of A - B = " + result);
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     result = valueA * valueB;
                     System.out.println("Answer of A x B = " + result);
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     if (valueB == 0) {
                         System.out.println("Error: Cannot divide by zero!");
                     } else {
                         result = valueA / valueB;
                         System.out.println("Answer of A / B = " + result);
                     }
-                    break;
+                }
             }
 
             // Ask if user wants to continue

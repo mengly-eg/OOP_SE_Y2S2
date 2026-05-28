@@ -74,68 +74,68 @@ class Math extends AbstractMath {
 public class L06EX01 {
     public static void main(String[] args) {
         Math math = new Math();
-        Scanner scanner = new Scanner(System.in);
-        boolean running = true;
-        
-        while (running) {
-            System.out.println("\n==== Menu ===");
-            System.out.println("1. Reverse a number");
-            System.out.println("2. Rounded number");
-            System.out.println("3. Count distinct number");
-            System.out.println("4. Decimal to Binary");
-            System.out.println("5. Quit");
-            System.out.print("Choose an opt: ");
+        try (Scanner scanner = new Scanner(System.in)) {
+            boolean running = true;
             
-            int choice = scanner.nextInt();
-            
-            switch (choice) {
-                case 1:
-                    System.out.println("::: Reverse a number :::");
-                    System.out.print("Input number: ");
-                    int numToReverse = scanner.nextInt();
-                    int reversed = math.reverseNumber(numToReverse);
-                    System.out.println("Output is: " + reversed);
-                    break;
-                    
-                case 2:
-                    System.out.println("::: Rounded number :::");
-                    System.out.print("Input number: ");
-                    double numToRound = scanner.nextDouble();
-                    int rounded = math.roundedNumber(numToRound);
-                    System.out.println("Output is: " + rounded);
-                    break;
-                    
-                case 3:
-                    System.out.println("::: Count distinct number :::");
-                    System.out.print("Enter array size: ");
-                    int size = scanner.nextInt();
-                    int[] arr = new int[size];
-                    System.out.print("Enter array elements: ");
-                    for (int i = 0; i < size; i++) {
-                        arr[i] = scanner.nextInt();
+            while (running) {
+                System.out.println("\n==== Menu ===");
+                System.out.println("1. Reverse a number");
+                System.out.println("2. Rounded number");
+                System.out.println("3. Count distinct number");
+                System.out.println("4. Decimal to Binary");
+                System.out.println("5. Quit");
+                System.out.print("Choose an opt: ");
+                
+                int choice = scanner.nextInt();
+                
+                switch (choice) {
+                    case 1 -> {
+                        System.out.println("::: Reverse a number :::");
+                        System.out.print("Input number: ");
+                        int numToReverse = scanner.nextInt();
+                        int reversed = math.reverseNumber(numToReverse);
+                        System.out.println("Output is: " + reversed);
                     }
-                    int distinctCount = math.countDistinct(arr);
-                    System.out.println("Output is: " + distinctCount);
-                    break;
-                    
-                case 4:
-                    System.out.println("::: Decimal to Binary :::");
-                    System.out.print("Input decimal: ");
-                    int decimal = scanner.nextInt();
-                    int binary = math.decimalToBinary(decimal);
-                    System.out.println("Output is: " + binary);
-                    break;
-                    
-                case 5:
-                    System.out.println("Goodbye!");
-                    running = false;
-                    break;
-                    
-                default:
-                    System.out.println("Invalid option. Please try again.");
+                        
+                    case 2 -> {
+                        System.out.println("::: Rounded number :::");
+                        System.out.print("Input number: ");
+                        double numToRound = scanner.nextDouble();
+                        int rounded = math.roundedNumber(numToRound);
+                        System.out.println("Output is: " + rounded);
+                    }
+                        
+                    case 3 -> {
+                        System.out.println("::: Count distinct number :::");
+                        System.out.print("Enter array size: ");
+                        int size = scanner.nextInt();
+                        int[] arr = new int[size];
+                        System.out.print("Enter array elements: ");
+                        for (int i = 0; i < size; i++) {
+                            arr[i] = scanner.nextInt();
+                        }
+                        int distinctCount = math.countDistinct(arr);
+                        System.out.println("Output is: " + distinctCount);
+                    }
+                        
+                    case 4 -> {
+                        System.out.println("::: Decimal to Binary :::");
+                        System.out.print("Input decimal: ");
+                        int decimal = scanner.nextInt();
+                        int binary = math.decimalToBinary(decimal);
+                        System.out.println("Output is: " + binary);
+                    }
+                        
+                    case 5 -> {
+                        System.out.println("Goodbye!");
+                        running = false;
+                    }
+                        
+                    default -> System.out.println("Invalid option. Please try again.");
+                }
             }
+            
+            scanner.close();
         }
-        
-        scanner.close();
     }
 }

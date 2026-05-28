@@ -4,15 +4,15 @@ package Week_3.LAB03;
 
 public class LAB03EX06 {
     public static void main(String[] args) {
-        System.out.println("Factorial of 5: " + Math.factor(5));
-        System.out.println("Surface of rectangle with sides 4 and 5: " + Math.rectangleSurface(4, 5));
-        System.out.println("Surface of circle with radius 3: " + Math.circleSurface(3));
-        System.out.println("Maximum of (1, 2, 3, 4, 5): " + Math.max(1, 2, 3, 4, 5));
-        System.out.println("Minimum of (1, 2, 3, 4, 5): " + Math.min(1, 2, 3, 4, 5));
+        System.out.println("Factorial of 5: " + MyMath.factor(5));
+        System.out.println("Surface of rectangle with sides 4 and 5: " + MyMath.rectangleSurface(4, 5));
+        System.out.println("Surface of circle with radius 3: " + MyMath.circleSurface(3));
+        System.out.println("Maximum of (1, 2, 3, 4, 5): " + MyMath.max(1, 2, 3, 4, 5));
+        System.out.println("Minimum of (1, 2, 3, 4, 5): " + MyMath.min(1, 2, 3, 4, 5));
     }
 }
 
-class Math {
+class MyMath {
     public static int factor (int a) {
         if (a <= 1) {
             return 1;

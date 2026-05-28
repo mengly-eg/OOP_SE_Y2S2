@@ -1,6 +1,5 @@
 package Week_6.LAB06;
 
-import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 public class L06EX03 {
@@ -11,6 +10,7 @@ public class L06EX03 {
         frame.setResizable(false);
         frame.setLayout(null);
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
 
         JLabel titleLabel = new JLabel("Count number of Vowel, Consonant and Space");
         titleLabel.setBounds(25, 20, 450, 25);
@@ -28,19 +28,19 @@ public class L06EX03 {
         button.setBounds(25, 115, 100, 30);
         frame.add(button);
 
-        JLabel vowelsLabel = new JLabel("Count of vowel is: 0");
+        JLabel vowelsLabel = new JLabel("Count of vowel is:");
         vowelsLabel.setBounds(25, 160, 300, 25);
         frame.add(vowelsLabel);
 
-        JLabel consonantsLabel = new JLabel("Count of consonant is: 0");
+        JLabel consonantsLabel = new JLabel("Count of consonant is:");
         consonantsLabel.setBounds(25, 190, 300, 25);
         frame.add(consonantsLabel);
 
-        JLabel spacesLabel = new JLabel("Count of space is: 0");
+        JLabel spacesLabel = new JLabel("Count of space is:");
         spacesLabel.setBounds(25, 220, 300, 25);
         frame.add(spacesLabel);
 
-        button.addActionListener((ActionEvent e) -> {
+        button.addActionListener(e -> {
             String text = textField.getText().toLowerCase();
             int vowelCount = 0;
             int consonantCount = 0;

@@ -22,41 +22,42 @@ public class LAB03EX07 {
     public static void main (String[] args) {
         ArrayList<Strudent> strudentList = new ArrayList<>();
         Strudent student = new Strudent();
-        Scanner sc = new Scanner(System.in);
-        int count = 1;
-        int choice;
-        do {
-            
-            System.out.println("===== Menu =====");
-            System.out.println("1. Add Student");
-            System.out.println("2. List Students");
-            System.out.println("3. Quit");
-            System.out.println("Choose an option: ");
-            choice = sc.nextInt();
-            switch (choice) {
-                case 1 -> {
-                    System.out.println("Student #" + count);
-                    count++;
-                    System.out.print("ID: ");
-                    int id = sc.nextInt();
-                    System.out.print("Name: ");
-                    String name = sc.next();
-                    System.out.print("Age: ");
-                    int age = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int count = 1;
+            int choice;
+            do {
+                
+                System.out.println("===== Menu =====");
+                System.out.println("1. Add Student");
+                System.out.println("2. List Students");
+                System.out.println("3. Quit");
+                System.out.println("Choose an option: ");
+                choice = sc.nextInt();
+                switch (choice) {
+                    case 1 -> {
+                        System.out.println("Student #" + count);
+                        count++;
+                        System.out.print("ID: ");
+                        int id = sc.nextInt();
+                        System.out.print("Name: ");
+                        String name = sc.next();
+                        System.out.print("Age: ");
+                        int age = sc.nextInt();
 
-                    System.out.println("A student added successfully!");
-                    student.setValues(id, name, age);
-                    strudentList.add(student);
-                }
-                case 2 -> {
-                    System.out.println("===== Student List =====");
-                    for (Strudent s : strudentList) {
-                        student.display(s.id, s.name, s.age);
+                        System.out.println("A student added successfully!");
+                        student.setValues(id, name, age);
+                        strudentList.add(student);
                     }
+                    case 2 -> {
+                        System.out.println("===== Student List =====");
+                        for (Strudent s : strudentList) {
+                            student.display(s.id, s.name, s.age);
+                        }
+                    }
+                    case 3 -> System.out.println("Exiting the program...");
                 }
-                case 3 -> System.out.println("Exiting the program...");
-            }
-        } while (choice != 3);
-        sc.close();
+            } while (choice != 3);
+            sc.close();
+        }
     }
 }
